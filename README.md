@@ -1,10 +1,13 @@
 # RPA (Robotic Process Automation)
 Robotic Process Automation (RPA) aims to replicate human actions. This project emulates repetitive human interactions with websites and provides a basic structure that can be adopted for specific use cases. It includes use cases involving data collection from research papers using a given serverless architecture.  
 
-# Lambda Coding Pattern: 
+# Lambda Coding Pattern 
 The Lambda coding pattern is designed to streamline the development process. The principle of separation of concerns is applied for modular and maintainable code by dividing the application logic into route handler, handler, service, and client, where each layer has its own specific task or work.
 
-
+1) ## Route Handler
+As name suggests handles the request and directs them depending on the method and path. It is the entry point of the Lambda function. It is responsible for receiving incoming HTTP requests, mapping them to the appropriate handler.
+  * Map the request to the appropriate Handler based on routing logic.
+2) ## Handler
 
 ![diagram-export-8-23-2024-11_56_58-PM](https://github.com/user-attachments/assets/8772470c-2775-4c30-8a19-16b8a28b2d02)
 

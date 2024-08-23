@@ -20,27 +20,15 @@ The service layer is an essential component that encapsulates business logic, or
    * Converting data using appropriate converters.
 ## 4) Client
 The Client layer is responsible for interacting with external websites, handling their response data, and managing errors. it contains service clients and REST clients.
-   ## 1) Service Client
-      it
-         * check
-         * asd   
-   ## 2) REST Client
-      Description of REST Client
-         * rest
-         * check
-         
-
-
-
-## 1) Service Client
-             It acts as an adapter and calls the REST client (which will handle the actual interaction). The service client manages the logic for calling REST clients according to the requirement and also handles errors thrown by external websites.
-                * Calls REST client. 
-                * Business logic for calling REST clients. 
-                * error handling (majorly based on errors thrown by 3rd party websites)
-## 2) REST Client
-             REST Client executes RESTful API calls to external systems.
-                * Make RESTFul API call with appropriate request details.
-                * return response from an external website to the Service Client.
+   ## 1. Service Client
+                It acts as an adapter and calls the REST client (which will handle the actual interaction). The service client manages the logic for calling REST clients according to the requirement and also handles errors thrown by external websites.
+                   * Calls REST client. 
+                   * Business logic for calling REST clients. 
+                   * error handling (majorly based on errors thrown by 3rd party websites)
+   ## 2. REST Client
+                REST Client executes RESTful API calls to external systems.
+                   * Make RESTFul API call with appropriate request details.
+                   * return response from an external website to the Service Client.
 
 
 ![diagram-export-8-23-2024-11_56_58-PM](https://github.com/user-attachments/assets/8772470c-2775-4c30-8a19-16b8a28b2d02)

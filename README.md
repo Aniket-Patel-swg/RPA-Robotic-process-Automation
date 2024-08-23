@@ -22,15 +22,16 @@ The service layer is an essential component that encapsulates business logic, or
 The Client layer is responsible for interacting with external websites, handling their response data, and managing errors. it contains service clients and REST clients.
    ## 1. Service Client
    It acts as an adapter and calls the REST client (which will handle the actual interaction). The service client manages the logic for calling REST clients according to the requirement and also handles errors thrown by external websites.
-         * Calls REST client.
-         * Business logic for calling REST clients. 
-         * error handling (majorly based on errors thrown by 3rd party websites)
+   * Calls REST client.
+   * Business logic for calling REST clients. 
+   * error handling (majorly based on errors thrown by 3rd party websites)
    ## 2. REST Client
    REST Client executes RESTful API calls to external systems.
-         * Make RESTFul API call with appropriate request details.
-         * Return response from an external website to the Service Client.
+   * Make RESTFul API call with appropriate request details.
+   * Return response from an external website to the Service Client.
 
-
+### Flow diagram for architecture
 ![diagram-export-8-23-2024-11_56_58-PM](https://github.com/user-attachments/assets/8772470c-2775-4c30-8a19-16b8a28b2d02)
 
+### Flow diagram for middleware before hitting handler
 ![diagram-export-8-23-2024-8_04_36-PM](https://github.com/user-attachments/assets/8647fc40-6897-4866-b176-75fddfb8963a)

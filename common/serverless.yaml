@@ -1,0 +1,22 @@
+plugin is custom javascript code that extends the javascript framework.
+
+service: Robotic-process-automation-serverless
+
+frameworkversion: '1'
+
+provider: 
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: ap-south-1
+  memorySize: 512
+  timeout: 30
+
+functions:
+  myFunction:
+    handler: /handler/sampleRouteHandler.routeHandler 
+    events:
+      - http:
+          path: test-endpoint
+          method: get
+          cors: true

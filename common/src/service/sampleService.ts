@@ -1,5 +1,5 @@
 import { ServiceClient } from '../client/service/sampleServiceClient';
-import { ServiceException, ConverterException } from '../errors/CustomErrors';
+import { ServiceException, ConverterException } from '../../Exceptions/CustomErrors';
 
 export class Service {
     private serviceClient: ServiceClient;

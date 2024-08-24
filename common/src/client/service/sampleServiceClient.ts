@@ -1,5 +1,5 @@
-import { RestClient } from './restClient';
-import { ServiceException } from '../../errors/CustomErrors'
+import { RestClient } from '../REST/sampleRESTClient';
+import { ServiceException } from '../../../Exceptions/CustomErrors'
 
 export class ServiceClient {
     private restClient: RestClient;

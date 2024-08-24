@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ServiceException } from '../../errors/CustomErrors';
+import { ServiceException } from '../../../Exceptions/CustomErrors';
 
 export class RestClient {
     public async sendRequest(data: any): Promise<any> {

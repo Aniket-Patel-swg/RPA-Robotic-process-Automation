@@ -1,6 +1,6 @@
 {
   "name": "serverless-rpa-package",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "common folder structure and utils",
   "main": "./src/handler/sampleRouteHandler.ts",
   "scripts": {

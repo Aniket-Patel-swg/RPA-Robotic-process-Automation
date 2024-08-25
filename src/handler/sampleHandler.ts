@@ -22,7 +22,7 @@ export class Handler {
             logger.info('Handler Log: Success getting employee details')
 
             return result;
-        } catch (error) {
+        } catch (error: any) {
 
             logger.error(`Handler Log: error getting employee details, with code: ${error.code}, message: ${error.message}`)
 

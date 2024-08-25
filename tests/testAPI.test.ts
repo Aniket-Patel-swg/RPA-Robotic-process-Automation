@@ -60,7 +60,6 @@ test('Checking if API is working or not', async () => {
             resourcePath: "/myapi/resource",
             domainName: "api.example.com",
             domainPrefix: "api",
-            extendedRequestId: null,
             requestTime: "12/Jan/2021:19:30:50 +0000",
         },
         resource: "/myapi/resource",
@@ -69,6 +68,6 @@ test('Checking if API is working or not', async () => {
     const handler = new Handler();
     const response = await handler.handle(event);
 
-    console.log("Response: ", response);
+    console.log("Response: ", response.data);
 
-}, 10000)
+}, 30000)

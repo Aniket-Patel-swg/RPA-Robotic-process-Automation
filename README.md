@@ -35,3 +35,7 @@ The Client layer is responsible for interacting with external websites, handling
 
 ### Flow diagram for middleware before hitting handler
 ![diagram-export-8-23-2024-8_04_36-PM](https://github.com/user-attachments/assets/8647fc40-6897-4866-b176-75fddfb8963a)
+
+
+## Install Packages
+you can Install packages and utils from npm [serverless-rpa-package](https://www.npmjs.com/package/serverless-rpa-package)

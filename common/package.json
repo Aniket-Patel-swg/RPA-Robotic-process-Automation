@@ -4,7 +4,8 @@
   "description": "common folder structure and utils",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testAPI" : "npx jest common\tests\testAPI.test.ts"
   },
   "repository": {
     "type": "git",

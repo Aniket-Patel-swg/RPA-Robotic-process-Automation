@@ -1,6 +1,6 @@
 {
   "name": "serverless-rpa-package",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "common folder structure and utils",
   "main": "./src/handler/sampleRouteHandler.ts",
   "scripts": {
@@ -34,6 +34,7 @@
     "@middy/validator": "^5.4.6",
     "aws-lambda": "1.0.7",
     "axios": "1.7.5",
+    "ora": "^8.1.0",
     "winston": "^3.14.2"
   },
   "devDependencies": {

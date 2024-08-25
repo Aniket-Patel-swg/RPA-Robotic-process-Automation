@@ -1,32 +1,51 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const ora = require('ora');
 
-const runCommand = command => {
+// Function to run a command synchronously and print the output with a spinner
+const runCommandWithSpinner = (command, spinnerText) => {
+    const spinner = ora({
+        text: spinnerText,
+        color: 'blue'
+    }).start();
+
     try {
-        execSync(`${command}`, { stdio: 'inherit' });
-    }
-    catch (e) {
+        execSync(command, { stdio: 'inherit' });
+        spinner.succeed(`Completed: ${spinnerText}`);
+    } catch (e) {
+        spinner.fail(`Failed: ${spinnerText}`);
         console.error(`Failed to execute ${command}`, e);
         return false;
     }
     return true;
-}
+};
 
-const repoName = process.argv[2]
+// Get the repository name from command-line arguments
+const repoName = process.argv[2];
+
+if (!repoName) {
+    console.error('Please provide a repository name.');
+    process.exit(1);
+}
 
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/Aniket-Patel-swg/RPA-Robotic-process-Automation.git ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
-console.log(`Making project ${repoName} for cool developer`);
+console.log(`Starting project setup for ${repoName}`);
 
-const checkedOut = runCommand(gitCheckoutCommand);
+// Run the git clone command with a spinner
+const checkedOut = runCommandWithSpinner(gitCheckoutCommand, 'Cloning repository');
 
 if (!checkedOut) process.exit(-1);
 
-console.log(`Installing dependencies for you!! Project Name: ${repoName}`);
+// Run the npm install command with a spinner
+const installedDeps = runCommandWithSpinner(installDepsCommand, 'Installing dependencies');
 
-const installeDeps = runCommand(installDepsCommand)
-if (!installeDeps) process.exit(-1);
+if (!installedDeps) process.exit(-1);
 
-console.log('There you go')
+console.log('Setup complete! You can now navigate to your project directory and start developing.');
+console.log(`Next steps:
+1. Navigate to the project directory: cd ${repoName}
+2. Start the development server: npm start
+`);

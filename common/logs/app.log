@@ -44,3 +44,21 @@
 2024-08-25T09:46:18.622Z [error]: Service Client Log: error getting employee details
 2024-08-25T09:46:18.623Z [error]: Service Log: error getting employee data
 2024-08-25T09:46:18.624Z [error]: Handler Log: error getting employee details, with code: undefined, message: Error in business logic execution
+2024-08-25T09:48:42.856Z [info]: Handler log: getting exployee details API
+2024-08-25T09:48:42.860Z [info]: Service Log: get employee details API
+2024-08-25T09:48:42.862Z [info]: Converter Log: transforming employee data
+2024-08-25T09:48:42.863Z [info]: Service Log: Transform Data successfull
+2024-08-25T09:48:42.864Z [info]: Service client Log: getting employee details
+2024-08-25T09:48:42.866Z [info]: REST Client log: Get employee details API
+2024-08-25T09:50:25.448Z [info]: Handler log: getting exployee details API
+2024-08-25T09:50:25.451Z [info]: Service Log: get employee details API
+2024-08-25T09:50:25.452Z [info]: Converter Log: transforming employee data
+2024-08-25T09:50:25.453Z [info]: Service Log: Transform Data successfull
+2024-08-25T09:50:25.454Z [info]: Service client Log: getting employee details
+2024-08-25T09:50:25.455Z [info]: REST Client log: Get employee details API
+2024-08-25T09:50:33.910Z [info]: REST Client Log: success getting employee details
+2024-08-25T09:50:36.281Z [info]: Service client Log: successfully got employee details
+2024-08-25T09:50:36.315Z [info]: Service Log: succesfully got employee details
+2024-08-25T09:50:36.316Z [info]: Converter Log: Converting employee response data 
+2024-08-25T09:50:36.317Z [info]: Service Log: successfully converted response
+2024-08-25T09:50:36.354Z [info]: Handler Log: Success getting employee details

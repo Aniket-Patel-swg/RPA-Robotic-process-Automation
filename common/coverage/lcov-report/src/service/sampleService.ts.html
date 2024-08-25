@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/28</span>
+                <span class='fraction'>20/28</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/28</span>
+                <span class='fraction'>20/28</span>
             </div>
         
             
@@ -154,24 +154,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -186,11 +186,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -221,22 +221,22 @@ export class Service {
             // Call the Service Client
             const response = await this.serviceClient.callExternalService(transformedData);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            logger.info("Service Log: succesfully got employee details")</span>
+            logger.info("Service Log: succesfully got employee details")
 &nbsp;
             // Perform post-processing if necessary
-            const convertedData = <span class="cstat-no" title="statement not covered" >this.processResponse(response);</span>
+            const convertedData = this.processResponse(response);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            logger.info("Service Log: successfully converted response")</span>
+            logger.info("Service Log: successfully converted response")
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            return convertedData;</span>
+            return convertedData;
         } catch (error) {
 &nbsp;
-            logger.error("Service Log: error getting employee data")
+<span class="cstat-no" title="statement not covered" >            logger.error("Service Log: error getting employee data")</span>
 &nbsp;
-            <span class="missing-if-branch" title="if path not taken" >I</span>if (error instanceof ConverterException) {
+<span class="cstat-no" title="statement not covered" >            <span class="missing-if-branch" title="if path not taken" >I</span>if (error instanceof ConverterException) {</span>
 <span class="cstat-no" title="statement not covered" >                throw new ServiceException('Data transformation failed', 400);</span>
             }
-            throw new ServiceException('Error in business logic execution', 500);
+<span class="cstat-no" title="statement not covered" >            throw new ServiceException('Error in business logic execution', 500);</span>
         }
     }
 &nbsp;
@@ -252,12 +252,12 @@ export class Service {
         }
     }
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >processResponse(</span>response: any): any {
-<span class="cstat-no" title="statement not covered" >        try {</span>
+    private processResponse(response: any): any {
+        try {
             // Process response logic
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            logger.info("Converter Log: Converting employee response data ")</span>
-<span class="cstat-no" title="statement not covered" >            return { processedResponse: response };</span>
+            logger.info("Converter Log: Converting employee response data ")
+            return { processedResponse: response };
         } catch (error) {
 <span class="cstat-no" title="statement not covered" >            logger.error("Converter Log: Failed Converting employee response data ")</span>
 <span class="cstat-no" title="statement not covered" >            throw new ConverterException('Failed to process response');</span>
@@ -271,7 +271,7 @@ export class Service {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-25T09:46:18.709Z
+                at 2024-08-25T09:50:42.422Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

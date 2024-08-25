@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.16% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/24</span>
+                <span class='fraction'>4/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.16% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/24</span>
+                <span class='fraction'>4/24</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,11 +109,11 @@
 <a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,32 +131,32 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export class HandlerException extends Error {
     public statusCode: number;
 &nbsp;
-    constructor(message: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >500,</span> public details?: any) {
-        super(message);
-        this.statusCode = statusCode;
-        this.name = 'HandlerException';
-        Object.setPrototypeOf(this, HandlerException.prototype);
+<span class="fstat-no" title="function not covered" >    constructor(m</span>essage: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >500,</span> public <span class="cstat-no" title="statement not covered" >details?: any)</span> {
+<span class="cstat-no" title="statement not covered" >        super(message);</span>
+<span class="cstat-no" title="statement not covered" >        this.statusCode = statusCode;</span>
+<span class="cstat-no" title="statement not covered" >        this.name = 'HandlerException';</span>
+<span class="cstat-no" title="statement not covered" >        Object.setPrototypeOf(this, HandlerException.prototype);</span>
     }
 }
 &nbsp;
@@ -174,22 +174,22 @@ export class ConverterException extends Error {
 export class ServiceException extends Error {
     public statusCode: number;
 &nbsp;
-    constructor(message: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >500,</span> public details?: any) {
-        super(message);
-        this.statusCode = statusCode;
-        this.name = 'ServiceException';
-        Object.setPrototypeOf(this, ServiceException.prototype);
+<span class="fstat-no" title="function not covered" >    constructor(m</span>essage: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >500,</span> public <span class="cstat-no" title="statement not covered" >details?: any)</span> {
+<span class="cstat-no" title="statement not covered" >        super(message);</span>
+<span class="cstat-no" title="statement not covered" >        this.statusCode = statusCode;</span>
+<span class="cstat-no" title="statement not covered" >        this.name = 'ServiceException';</span>
+<span class="cstat-no" title="statement not covered" >        Object.setPrototypeOf(this, ServiceException.prototype);</span>
     }
 }
 &nbsp;
 export class ClientException extends Error {
     public statusCode: number;
 &nbsp;
-    constructor(message: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >502,</span> public details?: any) {
-        super(message);
-        this.statusCode = statusCode;
-        this.name = 'ClientException';
-        Object.setPrototypeOf(this, ClientException.prototype);
+<span class="fstat-no" title="function not covered" >    constructor(m</span>essage: string, statusCode: number = <span class="branch-0 cbranch-no" title="branch not covered" >502,</span> public <span class="cstat-no" title="statement not covered" >details?: any)</span> {
+<span class="cstat-no" title="statement not covered" >        super(message);</span>
+<span class="cstat-no" title="statement not covered" >        this.statusCode = statusCode;</span>
+<span class="cstat-no" title="statement not covered" >        this.name = 'ClientException';</span>
+<span class="cstat-no" title="statement not covered" >        Object.setPrototypeOf(this, ClientException.prototype);</span>
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -199,7 +199,7 @@ export class ClientException extends Error {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-25T09:46:18.709Z
+                at 2024-08-25T09:50:42.422Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

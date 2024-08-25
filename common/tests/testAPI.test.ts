@@ -71,4 +71,4 @@ test('Checking if API is working or not', async () => {
 
     console.log("Response: ", response);
 
-})
+}, 10000)

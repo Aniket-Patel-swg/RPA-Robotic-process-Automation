@@ -1,8 +1,8 @@
 {
   "name": "serverless-rpa-package",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "common folder structure and utils",
-  "main": "./bin/cli.js",
+  "main": "./src/handler/sampleRouteHandler.ts",
   "scripts": {
     "test": "npm run test",
     "build": "tsc",
@@ -10,7 +10,7 @@
     "clean": "rm -rf node_modules/ &&  rm -rf dist/ && rm -rf package-lock.json && npm cache clean --force ",
     "testAPI": "npx jest common\tests\testAPI.test.ts"
   },
-  "bin": "./src/handler/sampleRouteHandler.ts",
+  "bin": "./bin/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aniket-Patel-swg/RPA-Robotic-process-Automation.git"

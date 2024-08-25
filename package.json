@@ -1,8 +1,8 @@
 {
   "name": "serverless-rpa-package",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "common folder structure and utils",
-  "main": "src/handler/routeHandler.handler",
+  "main": "./bin/cli.js",
   "scripts": {
     "test": "npm run test",
     "build": "tsc",

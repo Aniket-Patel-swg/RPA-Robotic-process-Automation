@@ -10,6 +10,9 @@
     "clean": "rm -rf node_modules/ &&  rm -rf dist/ && rm -rf package-lock.json && npm cache clean --force ",
     "testAPI": "npx jest common\tests\testAPI.test.ts"
   },
+  "bin":{
+    "create-my-serverless-app": "./src/handler/sampleRouteHandler.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aniket-Patel-swg/RPA-Robotic-process-Automation.git"

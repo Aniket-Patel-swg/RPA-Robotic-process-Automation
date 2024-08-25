@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const ora = require('ora');
+import { execSync } from 'child_process';
+import ora from 'ora';
 
 // Function to run a command synchronously and print the output with a spinner
 const runCommandWithSpinner = (command, spinnerText) => {

@@ -1,5 +1,5 @@
 import { RestClient } from '../REST/sampleRESTClient';
-import { ServiceException } from '../../../utils/Exceptions/CustomErrors'
+import { ServiceException } from '../../../utils/error_handling/exceptions/CustomErrors'
 import logger from '../../../utils/logger';
 
 export class ServiceClient {

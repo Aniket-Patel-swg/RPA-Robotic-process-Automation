@@ -2,4 +2,7 @@ node_modules/
 package-lock.json
 dist/
 coverage/
+logs/
+bin/
 .npmrc
+.env

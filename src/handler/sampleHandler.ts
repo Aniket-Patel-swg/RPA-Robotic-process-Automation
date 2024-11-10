@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { Service } from '../service/sampleService';
-import { HandlerException, ServiceException } from '../../utils/Exceptions/CustomErrors';
+import { HandlerException, ServiceException } from '../../utils/error_handling/exceptions/CustomErrors';
 import logger from '../../utils/logger';
 
 export class Handler {

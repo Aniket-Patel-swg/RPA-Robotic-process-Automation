@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { Handler } from './sampleHandler';
-import { HandlerException } from '../../utils/Exceptions/CustomErrors';
+import { HandlerException } from '../../utils/error_handling/exceptions/CustomErrors';
 
 export const routeHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     try {

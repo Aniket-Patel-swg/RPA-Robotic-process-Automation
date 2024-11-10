@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ClientException } from '../../../utils/Exceptions/CustomErrors';
+import { ClientException } from '../../../utils/error_handling/exceptions/CustomErrors';
 import logger from '../../../utils/logger';
 
 export class RestClient {

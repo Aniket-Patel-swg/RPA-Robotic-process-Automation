@@ -41,9 +41,9 @@ The Client layer is responsible for interacting with external websites, handling
 
 
 
-## Common utils
+# utils
 
-# ApiResponse Class
+## ApiResponse Class
 
 The `ApiResponse` class standardizes the format of API responses, providing a consistent structure for returning status codes, messages, and data payloads across all endpoints.
 
@@ -55,14 +55,43 @@ The `ApiResponse` class standardizes the format of API responses, providing a co
 ## Installation
 Import `ApiResponse` as needed in your API modules:
 ```typescript
-import { ApiResponse } from './path/to/ApiResponse';
+import { ApiResponse } from 'serverless-rpa-package';
+```
 
-# Retry Helper
+## Retry Helper
 
-A utility function that retries an asynchronous function upon failure, useful for handling transient errors, such as network request failures or external API errors. It allows specifying the maximum number of retry attempts and a delay between retries.
+A utility function that retries an asynchronous function upon failure, useful for handling transient errors, such as network request failures or external API errors. It allows for the maximum number of retry attempts and a delay between retries.
 
 ## Features
 
 - Retry a function on failure.
 - Customizable number of retries and delay between attempts.
 - Helps with handling intermittent issues, like network instability.
+
+## Installation
+Import `withRetry` as needed in your API modules:
+```typescript
+import { withRetry } from 'serverless-rpa-package';
+```
+
+# Validate Function
+
+A utility function that validates input data against a defined schema. It ensures that the provided data conforms to required types, constraints (e.g., min/max values, patterns), and handles nested objects and arrays. This function is ideal for validating API request bodies, form submissions, or any other data structures.
+
+## Features
+
+- **Required Fields**: Ensures that required fields are present.
+- **Type Validation**: Supports validation for various types (string, number, boolean, array, object, date).
+- **String Constraints**: Validates string length and patterns.
+- **Number Constraints**: Enforces number limits (min/max).
+- **Array Validation**: Checks arrays for proper types (e.g., array of strings or numbers).
+- **Object Validation**: Supports nested object validation through recursive checks.
+- **Enum Validation**: Ensures values match one of the allowed enum values.
+
+## Installation
+
+Install the package that contains the `validate` function:
+
+```typescript
+npm install serverless-rpa-package
+```

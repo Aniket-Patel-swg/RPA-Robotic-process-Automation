@@ -95,3 +95,55 @@ Install the package that contains the `validate` function:
 ```typescript
 import { validate } from 'serverless-rpa-package';
 ```
+
+# Authenticate Function
+
+A utility function that provides authentication capabilities to verify user credentials. This function is ideal for verifying API request headers or any user authentication scenarios where validation of credentials is required.
+
+## Features
+
+- **Username/Password Validation**: Checks if the provided username and password match the expected values.
+- **Token-Based Authentication**: Supports verifying tokens, such as JWT, to authenticate requests.
+- **Custom Error Messages**: Provides descriptive error messages for failed authentication attempts.
+
+## Installation
+
+Install the package containing the `authenticate` function:
+
+```typescript
+import { authenticate } from 'serverless-rpa-package';
+```
+
+# Web Scraping Utilities with Puppeteer
+
+This package provides helper functions to extract content from web pages using Puppeteer. These functions are ideal for web scraping, automated testing, or data extraction from HTML elements.
+
+## Functions Included
+
+- **`extractText`**: Extracts the text content of a specified HTML element on the page.
+- **`extractAttribute`**: Extracts the value of a specified attribute from an HTML element.
+
+## Installation
+
+You can install this package via npm:
+
+```typescript
+import { authenticate } from 'serverless-rpa-package';
+```
+
+# Puppeteer Web Automation Utilities
+
+This package provides two utility functions for automating web interactions using Puppeteer: `clickElement` and `typeIntoElement`. These functions are useful for simulating user actions like clicking buttons and typing into input fields, while also handling dynamic loading times.
+
+## Functions Included
+
+- **`clickElement`**: Waits for a specified element to appear and clicks on it.
+- **`typeIntoElement`**: Waits for a specified input element to appear and types the provided text into it.
+
+## Installation
+
+To install this package via npm:
+
+```typescript
+import { clickElement, typeIntoElement } from 'serverless-rpa-package';
+```

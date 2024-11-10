@@ -38,3 +38,31 @@ The Client layer is responsible for interacting with external websites, handling
 
 ### Flow diagram for middleware before hitting handler
 ![diagram-export-8-23-2024-8_04_36-PM](https://github.com/user-attachments/assets/8647fc40-6897-4866-b176-75fddfb8963a)
+
+
+
+## Common utils
+
+# ApiResponse Class
+
+The `ApiResponse` class standardizes the format of API responses, providing a consistent structure for returning status codes, messages, and data payloads across all endpoints.
+
+## Features
+- **Standardized Response**: Ensures all endpoints return a uniform structure.
+- **Flexible Fields**: Includes `status`, `message`, and `data` fields for various use cases.
+- **Improved Client Handling**: Simplifies API response handling for clients by providing consistent success and error formats.
+
+## Installation
+Import `ApiResponse` as needed in your API modules:
+```typescript
+import { ApiResponse } from './path/to/ApiResponse';
+
+# Retry Helper
+
+A utility function that retries an asynchronous function upon failure, useful for handling transient errors, such as network request failures or external API errors. It allows specifying the maximum number of retry attempts and a delay between retries.
+
+## Features
+
+- Retry a function on failure.
+- Customizable number of retries and delay between attempts.
+- Helps with handling intermittent issues, like network instability.

@@ -93,5 +93,5 @@ A utility function that validates input data against a defined schema. It ensure
 Install the package that contains the `validate` function:
 
 ```typescript
-npm install serverless-rpa-package
+import { validate } from 'serverless-rpa-package';
 ```

@@ -1,31 +1,36 @@
 import { ServiceClient } from '../client/service/sampleServiceClient';
 import { ServiceException, ConverterException } from '../../utils/error_handling/exceptions/CustomErrors';
 import logger from '../../utils/logger';
+import { RequestConverter } from '../converter/request/sampleResponseConverter';
+import { PanAadharLinkConverter } from '../converter/response/panAadharLinkConverter';
 
 export class Service {
     private serviceClient: ServiceClient;
+    private requestConverter: RequestConverter;
+    private responseConverter: PanAadharLinkConverter;
 
     constructor() {
         this.serviceClient = new ServiceClient();
+        this.requestConverter = new RequestConverter();
+        this.responseConverter = new PanAadharLinkConverter();
     }
 
-    public async performBusinessLogic(data: any): Promise<any> {
+    public async performBusinessLogic(pan: string, aadhaar: string): Promise<any> {
         try {
 
             logger.info('Service Log: get employee details API')
 
             // Perform any necessary data transformation
-            const transformedData = this.transformData(data);
 
             logger.info("Service Log: Transform Data successfull")
 
             // Call the Service Client
-            const response = await this.serviceClient.callExternalService(transformedData);
+            const response = await this.serviceClient.callExternalService(pan, aadhaar);
 
             logger.info("Service Log: succesfully got employee details")
 
             // Perform post-processing if necessary
-            const convertedData = this.processResponse(response);
+            const convertedData = await this.responseConverter.processResponse(response);
 
             logger.info("Service Log: successfully converted response")
 
@@ -41,27 +46,5 @@ export class Service {
         }
     }
 
-    private transformData(data: any): any {
-        try {
-            // Your Transformation logic
-            
-            logger.info("Converter Log: transforming employee data")
-            return { transformedData: data };
-        } catch (error) {
-            logger.error("Converter Log: error transforming employee details")
-            throw new ConverterException('Failed to transform data');
-        }
-    }
-
-    private processResponse(response: any): any {
-        try {
-            // Process response logic
-
-            logger.info("Converter Log: Converting employee response data ")
-            return { processedResponse: response };
-        } catch (error) {
-            logger.error("Converter Log: Failed Converting employee response data ")
-            throw new ConverterException('Failed to process response');
-        }
-    }
+    
 }

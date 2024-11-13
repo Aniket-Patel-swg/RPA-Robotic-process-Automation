@@ -17,7 +17,15 @@ export class Handler {
 
             const requestData = JSON.parse(event.body!);
 
-            const result = await this.service.performBusinessLogic(requestData);
+            const pan = requestData.pan;
+
+            const aadhaar = requestData.aadhaar;
+
+            if (!pan || !aadhaar) {
+                throw new HandlerException('Pan number not provided', 400);
+            }
+
+            const result = await this.service.performBusinessLogic(pan, aadhaar);
 
             logger.info('Handler Log: Success getting employee details')
 

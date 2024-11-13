@@ -6,7 +6,7 @@ test('Checking if API is working or not', async () => {
 
     // note this is an example event, which contains all the keys, you can edit as per your reqirement. 
     const event: APIGatewayProxyEvent = {
-        body: JSON.stringify({ key: "value" }),
+        body: JSON.stringify({ pan: "your-pan", aadhaar: "your-aadhaar" }),
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer token",
@@ -66,8 +66,16 @@ test('Checking if API is working or not', async () => {
     };
 
     const handler = new Handler();
+
+    // Log start time
+    const startTime = Date.now();
+
     const response = await handler.handle(event);
 
+    const endTime = Date.now();
+    const timeTaken = endTime - startTime;
+
     console.log("Response: ", response.data);
+    console.log(`Time taken by API: ${timeTaken} ms`);
 
 }, 30000)

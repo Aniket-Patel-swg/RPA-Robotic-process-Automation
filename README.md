@@ -38,3 +38,112 @@ The Client layer is responsible for interacting with external websites, handling
 
 ### Flow diagram for middleware before hitting handler
 ![diagram-export-8-23-2024-8_04_36-PM](https://github.com/user-attachments/assets/8647fc40-6897-4866-b176-75fddfb8963a)
+
+
+
+# utils
+
+## ApiResponse Class
+
+The `ApiResponse` class standardizes the format of API responses, providing a consistent structure for returning status codes, messages, and data payloads across all endpoints.
+
+## Features
+- **Standardized Response**: Ensures all endpoints return a uniform structure.
+- **Flexible Fields**: Includes `status`, `message`, and `data` fields for various use cases.
+- **Improved Client Handling**: Simplifies API response handling for clients by providing consistent success and error formats.
+
+## Installation
+Import `ApiResponse` as needed in your API modules:
+```typescript
+import { ApiResponse } from 'serverless-rpa-package';
+```
+
+## Retry Helper
+
+A utility function that retries an asynchronous function upon failure, useful for handling transient errors, such as network request failures or external API errors. It allows for the maximum number of retry attempts and a delay between retries.
+
+## Features
+
+- Retry a function on failure.
+- Customizable number of retries and delay between attempts.
+- Helps with handling intermittent issues, like network instability.
+
+## Installation
+Import `withRetry` as needed in your API modules:
+```typescript
+import { withRetry } from 'serverless-rpa-package';
+```
+
+# Validate Function
+
+A utility function that validates input data against a defined schema. It ensures that the provided data conforms to required types, constraints (e.g., min/max values, patterns), and handles nested objects and arrays. This function is ideal for validating API request bodies, form submissions, or any other data structures.
+
+## Features
+
+- **Required Fields**: Ensures that required fields are present.
+- **Type Validation**: Supports validation for various types (string, number, boolean, array, object, date).
+- **String Constraints**: Validates string length and patterns.
+- **Number Constraints**: Enforces number limits (min/max).
+- **Array Validation**: Checks arrays for proper types (e.g., array of strings or numbers).
+- **Object Validation**: Supports nested object validation through recursive checks.
+- **Enum Validation**: Ensures values match one of the allowed enum values.
+
+## Installation
+
+Install the package that contains the `validate` function:
+
+```typescript
+import { validate } from 'serverless-rpa-package';
+```
+
+# Authenticate Function
+
+A utility function that provides authentication capabilities to verify user credentials. This function is ideal for verifying API request headers or any user authentication scenarios where validation of credentials is required.
+
+## Features
+
+- **Username/Password Validation**: Checks if the provided username and password match the expected values.
+- **Token-Based Authentication**: Supports verifying tokens, such as JWT, to authenticate requests.
+- **Custom Error Messages**: Provides descriptive error messages for failed authentication attempts.
+
+## Installation
+
+Install the package containing the `authenticate` function:
+
+```typescript
+import { authenticate } from 'serverless-rpa-package';
+```
+
+# Web Scraping Utilities with Puppeteer
+
+This package provides helper functions to extract content from web pages using Puppeteer. These functions are ideal for web scraping, automated testing, or data extraction from HTML elements.
+
+## Functions Included
+
+- **`extractText`**: Extracts the text content of a specified HTML element on the page.
+- **`extractAttribute`**: Extracts the value of a specified attribute from an HTML element.
+
+## Installation
+
+You can install this package via npm:
+
+```typescript
+import { authenticate } from 'serverless-rpa-package';
+```
+
+# Puppeteer Web Automation Utilities
+
+This package provides two utility functions for automating web interactions using Puppeteer: `clickElement` and `typeIntoElement`. These functions are useful for simulating user actions like clicking buttons and typing into input fields, while also handling dynamic loading times.
+
+## Functions Included
+
+- **`clickElement`**: Waits for a specified element to appear and clicks on it.
+- **`typeIntoElement`**: Waits for a specified input element to appear and types the provided text into it.
+
+## Installation
+
+To install this package via npm:
+
+```typescript
+import { clickElement, typeIntoElement } from 'serverless-rpa-package';
+```

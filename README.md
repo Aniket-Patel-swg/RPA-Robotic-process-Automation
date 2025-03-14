@@ -1,5 +1,8 @@
 ## For installing tempalte run: 
-npx serverless-rpa-package project-name
+```
+npx serverless-rpa-packge
+```
+in your command prompt
 
 # RPA (Robotic Process Automation)
 Robotic Process Automation (RPA) aims to replicate human actions. This project emulates repetitive human interactions with websites and provides a basic structure that can be adopted for specific use cases. It includes use cases involving data collection from research papers using a given serverless architecture.  

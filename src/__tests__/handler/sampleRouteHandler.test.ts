@@ -1,11 +1,22 @@
+// Mock dependencies first, before any imports
+const mockLogger = {
+    info: jest.fn(),
+    error: jest.fn(),
+    warn: jest.fn(),
+    debug: jest.fn()
+};
+
+// Mock modules
+jest.mock('../../utils/logger', () => ({
+    __esModule: true,
+    default: mockLogger
+}));
+jest.mock('../../service/sampleService');
+
+// Import after mocks are setup
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { routeHandler } from '../../handler/sampleRouteHandler';
-import { Handler } from '../../handler/sampleHandler';
 import { Service } from '../../service/sampleService';
-
-// Mock the Service class
-jest.mock('../../service/sampleService');
-jest.mock('../../utils/logger');
 
 describe('Route Handler Tests', () => {
     let mockEvent: APIGatewayProxyEvent;
@@ -51,6 +62,7 @@ describe('Route Handler Tests', () => {
                 'ABCDE1234F',
                 '123456789012'
             );
+            expect(mockLogger.info).toHaveBeenCalled();
         });
 
         test('should handle test route successfully', async () => {
@@ -63,6 +75,7 @@ describe('Route Handler Tests', () => {
             expect(response.statusCode).toBe(200);
             const body = JSON.parse(response.body);
             expect(body.status).toBe('success');
+            expect(mockLogger.info).toHaveBeenCalled();
         });
     });
 
@@ -76,6 +89,7 @@ describe('Route Handler Tests', () => {
             const body = JSON.parse(response.body);
             expect(body.status).toBe('error');
             expect(body.message).toBe('Route not found');
+            expect(mockLogger.error).toHaveBeenCalled();
         });
 
         test('should return 405 for invalid HTTP method', async () => {
@@ -87,6 +101,7 @@ describe('Route Handler Tests', () => {
             const body = JSON.parse(response.body);
             expect(body.status).toBe('error');
             expect(body.message).toContain('Method DELETE not allowed');
+            expect(mockLogger.error).toHaveBeenCalled();
         });
 
         test('should return 400 for missing required fields', async () => {
@@ -98,6 +113,7 @@ describe('Route Handler Tests', () => {
             const body = JSON.parse(response.body);
             expect(body.status).toBe('error');
             expect(body.message).toContain('Missing required fields');
+            expect(mockLogger.error).toHaveBeenCalled();
         });
 
         test('should return 500 for service error', async () => {
@@ -110,19 +126,18 @@ describe('Route Handler Tests', () => {
             expect(response.statusCode).toBe(500);
             const body = JSON.parse(response.body);
             expect(body.status).toBe('error');
+            expect(mockLogger.error).toHaveBeenCalled();
         });
     });
 
     describe('Middleware Functionality', () => {
         test('should log request and response', async () => {
-            const logger = require('../../utils/logger').default;
-
             await routeHandler(mockEvent);
 
-            expect(logger.info).toHaveBeenCalledWith(
+            expect(mockLogger.info).toHaveBeenCalledWith(
                 expect.stringContaining('Request received')
             );
-            expect(logger.info).toHaveBeenCalledWith(
+            expect(mockLogger.info).toHaveBeenCalledWith(
                 expect.stringContaining('Response status')
             );
         });
@@ -136,6 +151,7 @@ describe('Route Handler Tests', () => {
             const body = JSON.parse(response.body);
             expect(body.status).toBe('error');
             expect(body.message).toBe('Invalid request body');
+            expect(mockLogger.error).toHaveBeenCalled();
         });
     });
 }); 

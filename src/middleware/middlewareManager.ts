@@ -13,7 +13,7 @@ export class MiddlewareManager {
         handler: (event: APIGatewayProxyEvent) => Promise<any>
     ): Promise<APIGatewayProxyResult> {
         const context: { [key: string]: any } = {};
-
+3   
         const executeMiddlewareChain = async (index: number): Promise<APIGatewayProxyResult> => {
             if (index === this.middlewares.length) {
                 const result = await handler(event);
